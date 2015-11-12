@@ -32,3 +32,5 @@ for i in list(range(0,10,2)):
 # 			 print(n, 'is a prime number')
 
 #print(range(10)) # this will return an object, if we want to create a list from the object we can use list(range(x,x,x))
+
+
