@@ -3,7 +3,7 @@
 - Similar to a list, a *dictionary* is a collection of many values. Unlike indexes for lists though, indexes for dictionaries can use many different data types, not just integers.
 - indexes for dictionaries are called *keys*
 - a key with its associated value is called a *key-value-pair*
-- in code, a dictonary is typed with braces: {}
+- in code, a dictionary is typed with braces: {}
 - dictionaries can still use integers as keys, but they can be any number:
 
 ```
@@ -24,4 +24,14 @@ True
 ```
 
 - because dictionaries are not ordered they can not be sliced like lists
+
+## keys(), values(), and items() methods
+
+- there are 3 methods that return list-like values from dictionary's keys, values and both: ```keys()```, ```values()```, and ```items()```. They are not mutable objects like lists, BUT these data types (```dict_keys```, ```dict_values``` and ```dict_items```) can be used in for loops.
+
+- it's possible to assign keys and values in separate variables with the multiple assignment trick.
+
+## checking existence of key or value in Dictionary
+
+
 
