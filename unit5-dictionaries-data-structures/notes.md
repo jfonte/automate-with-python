@@ -13,7 +13,8 @@ spam = {12345: 'luggage combination', 42: 'the answer'}
 - dictionaries are unordered. there is no "first" item in a dictionary. If you compared two lists, their order would matter. However in dictionaries, the order and even the keys DO NOT MATTER. Only their values:
 
 ```
->>> spam = ['cats', 'dogs', 'moose']
+>>> spam = ['cats',
+>>>  'dogs', 'moose']
 >>> bacon = ['dogs', 'moose', 'cats']
 >>> spam == bacon
 False

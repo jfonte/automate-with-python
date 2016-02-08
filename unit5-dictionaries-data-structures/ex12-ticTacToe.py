@@ -17,8 +17,12 @@ def drawBoard(board):
 
 def startGame():
 	os.system('clear') # clears screen
-	turn = 'X' # x begins
 	count = 0
+	print("Would you like to play as 'x' or 'o'?")
+	turn = input()
+	if turn ='e':
+		raise SystemExit
+
 	while count <9:
 		os.system('clear')
 		drawBoard(theBoard)
@@ -34,10 +38,10 @@ def startGame():
 			count +=1
 			if count>4:
 				checkWinner();
-			if turn == 'X':
-				turn = 'O'
+			if turn == 'x':
+				turn = 'o'
 			else:
-				turn = 'X'
+				turn = 'x'
 		else:
 			print('That position is taken.')
 			time.sleep(1)
@@ -46,23 +50,23 @@ def startGame():
 
 def checkWinner():
 	# check rows
-	if theBoard['1'] == theBoard['2'] == theBoard['3']:
+	if theBoard['1'] == theBoard['2'] == theBoard['3'] != ' ' :
 		printWinnerRestart(theBoard['1'])
-	elif theBoard['4'] == theBoard['5'] == theBoard['6']:
+	elif theBoard['4'] == theBoard['5'] == theBoard['6'] != ' ':
 		printWinnerRestart(theBoard['4'])
-	elif theBoard['7'] == theBoard['8'] == theBoard['9']:
+	elif theBoard['7'] == theBoard['8'] == theBoard['9'] != ' ':
 		printWinnerRestart(theBoard['7'])
 	# check cols
-	elif theBoard['1'] == theBoard['4'] == theBoard['7']:
+	elif theBoard['1'] == theBoard['4'] == theBoard['7'] != ' ':
 		printWinnerRestart(theBoard['4'])
-	elif theBoard['2'] == theBoard['5'] == theBoard['8']:
+	elif theBoard['2'] == theBoard['5'] == theBoard['8'] != ' ':
 		printWinnerRestart(theBoard['5'])
-	elif theBoard['3'] == theBoard['6'] == theBoard['9']:
+	elif theBoard['3'] == theBoard['6'] == theBoard['9'] != ' ':
 		printWinnerRestart(theBoard['6'])
 	# check diagonals
-	elif theBoard['1'] == theBoard['5'] == theBoard['9']:
+	elif theBoard['1'] == theBoard['5'] == theBoard['9'] != ' ':
 		printWinnerRestart(theBoard['5'])	
-	elif theBoard['3'] == theBoard['5'] == theBoard['7']:
+	elif theBoard['3'] == theBoard['5'] == theBoard['7'] != ' ':
 		printWinnerRestart(theBoard['5'])
 
 def printWinnerRestart(winner):
@@ -71,6 +75,8 @@ def printWinnerRestart(winner):
 	drawBoard(theBoard)
 	print("============================")
 	print(winner+' has WON! Exiting to menu')
+	time.sleep(1)
+	os.system('clear')
 	resetBoard();
 	menu();
 
@@ -79,7 +85,7 @@ def resetBoard():
 		theBoard[str(i)]=' '
 
 def menu():
-	print('============================\n'+'Greetings Professor Falken. ' + 'Shall we play a game of TicTacToe?\n\n'+'TYPE y TO BEGIN, OR any other key TO EXIT')
+	print('============================\n'+'Greetings Professor Falken.\n\n' + 'Shall we play a game of TicTacToe?\n\n'+'TYPE y and then Enter TO BEGIN, OR just any other key and Enter TO EXIT')
 	choice = input()
 	if choice == 'y':
 		startGame();
