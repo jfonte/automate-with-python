@@ -14,7 +14,6 @@ Total number of items: 63”
 '''
 
 stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
-
 order = ['arrow', 'gold coin', 'rope', 'torch', 'dagger']
 
 def displayInventory(mystuff):
@@ -24,7 +23,21 @@ def displayInventory(mystuff):
 	    print(stuff[i], i)
 	    tot+=stuff[i]
 	print('Total number of items: ' +str(tot))
-	
-displayInventory(stuff)
+
+# displayInventory(stuff)
+
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+
+def addToInventory(inventory, addedItems):
+	# first we access the loot
+	for i in addedItems:
+		# then we open the box and add the loot
+		if i in inventory.keys():
+			inventory[i]+=1
+		else:
+			inventory.setdefault(i,1)
+	return inventory
+
+print(addToInventory(stuff, dragonLoot))
 
 
